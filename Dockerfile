@@ -1,5 +1,5 @@
 
-FROM python:3.12.0a5-slim as requirements-stage
+FROM python:3.13.0a6-slim as requirements-stage
 
 WORKDIR /tmp
 
@@ -10,7 +10,7 @@ COPY ./pyproject.toml ./poetry.lock* /tmp/
 
 RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
-FROM python:3.12.0a5-slim
+FROM python:3.13.0a6-slim
 
 WORKDIR /code
 
